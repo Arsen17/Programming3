@@ -6,7 +6,7 @@ class Gishatich extends Base{
 
     }
     
-   /* getNewCoordinates() {
+    getNewCoordinates() {
         this.directions = [
             [this.x - 1, this.y - 1],
             [this.x, this.y - 1],
@@ -18,7 +18,12 @@ class Gishatich extends Base{
             [this.x + 1, this.y + 1]
         ];
     }
-    chooseCell(c) {
+
+    chooseCell(c){
+        this.getNewCoordinates()
+        return super.chooseCell(c);
+    }
+   /* chooseCell(c) {
         this.getNewCoordinates();
         var found = [];
         for (var i in this.directions) {
