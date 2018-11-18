@@ -63,8 +63,25 @@ function setup() {
             }
             else if (matrix[y][x] == 5) {
                 kapuytArr.push(new Kapuyt(x, y, 5));
+         
+         
             }
+            
+            else if (matrix[y][x] == 7) {
+                kapuytArr.push(new Jrhexex(x, y, 5));
+         
+         
+            }
+          
+           
+
+            
         }
+
+
+
+
+        
     }
 
 
@@ -109,6 +126,13 @@ function draw() {
                 fill("black");
                 rect(x * side, y * side, side, side);
             }
+            else if (matrix[y][x] == 7) {
+                fill("lightblue");
+                rect(x * side, y * side, side, side);
+            }
+
+            
+
         }
     }
     for (var i in grassArr) {
@@ -138,6 +162,27 @@ function draw() {
         kapuytArr[i].eat();
 
     }
+   
+
+    
+     /*for (var i in JrhexexArr) {
+        if(click){
+
+        }
+        JrhexexArr[i].eat();
+
+    }*/
+    function click(evt) {
+        console.log(evt.pageX, evt.pageY);
+       
+        var x = evt.pageX;
+        var y = evt.pageY;
+        matrix[y][x] == 7;
+            }
+        
+ 
+    
+    window.onclick = click;
 
 }
 

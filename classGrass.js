@@ -1,4 +1,11 @@
 class Grass extends Base{
+    constructor(x, y, index) {
+        super(x,y,index);
+      
+ 
+    }
+    
+
    /* constructor(x, y, index) {
         this.x = x;
         this.y = y;

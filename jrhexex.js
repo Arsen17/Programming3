@@ -1,32 +1,6 @@
-class GrassEater extends Base{
+class Jrhexex{
 
-    constructor(x, y, index) {
-       super(x,y,index);
-        this.energy = 4;
-     
-
-    }
     getNewCoordinates() {
-        this.directions = [
-            [this.x - 1, this.y - 1],
-            [this.x, this.y - 1],
-            [this.x + 1, this.y - 1],
-            [this.x - 1, this.y],
-            [this.x + 1, this.y],
-            [this.x - 1, this.y + 1],
-            [this.x, this.y + 1],
-            [this.x + 1, this.y + 1]
-        ];
-    }
-
-    chooseCell(c){
-        this.getNewCoordinates();
-        return super.chooseCell(c);
-    }
-
-   
-    
-   /* getNewCoordinates() {
         this.directions = [
             [this.x - 1, this.y - 1],
             [this.x, this.y - 1],
@@ -52,10 +26,14 @@ class GrassEater extends Base{
             }
         }
         return found;
-    }*/
+    }
+
+   
+    
+   
 
     mul() {
-        var emptyCells1 = this.chooseCell(1);
+        var emptyCells1 = this.chooseCell(3);
         var newCell1 = random(emptyCells1);
 
         if (newCell1) {
@@ -63,17 +41,17 @@ class GrassEater extends Base{
             var newY = newCell1[1];
             matrix[newY][newX] = this.index;
             matrix[this.y][this.x] = 2;
-            for (var i in grassArr) {
-                if (newX == grassArr[i].x && newY == grassArr[i].y) {
-                    grassArr.splice(i, 1);
+            for (var i in GishatichArr) {
+                if (newX == GishatichArr[i].x && newY == gishatichArr[i].y) {
+                    GishatichArr.splice(i, 1);
                     break;
                 }
             }
 
 
 
-            var newGrassEater = new GrassEater(newX, newY, this.index);
-            grassEaterArr.push(newGrassEater);
+            var newJrhexex = new Jrhexex(newX, newY, this.index);
+            JrhexexArr.push(newJrhexex);
 
         }
     }
@@ -105,7 +83,7 @@ class GrassEater extends Base{
 
 
     eat() {
-        var emptyCells1 = this.chooseCell(1);
+        var emptyCells1 = this.chooseCell(3);
         var newCell1 = random(emptyCells1);
 
         if (newCell1) {
@@ -114,9 +92,9 @@ class GrassEater extends Base{
             matrix[newY][newX] = this.index;
             matrix[this.y][this.x] = 0;
 
-            for (var i in grassArr) {
-                if (newX == grassArr[i].x && newY == grassArr[i].y) {
-                    grassArr.splice(i, 1);
+            for (var i in GishatichArr) {
+                if (newX == GishatichArr[i].x && newY == GishatichArr[i].y) {
+                    GishatichArr.splice(i, 1);
                     break;
                 }
             }
@@ -134,9 +112,9 @@ class GrassEater extends Base{
 
     die() {
         matrix[this.y][this.x] = 0;
-        for (var i in grassEaterArr) {
-            if (this.x == grassEaterArr[i].x && this.y == grassEaterArr[i].y) {
-                grassEaterArr.splice(i, 1);
+        for (var i in JrhexexArr) {
+            if (this.x == JrhexexArr[i].x && this.y == JrhexexArr[i].y) {
+               JrhexexArr.splice(i, 1);
                 break;
             }
         }
