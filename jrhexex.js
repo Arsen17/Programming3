@@ -12,7 +12,7 @@ class Jrhexex{
             [this.x + 1, this.y + 1]
         ];
     }
-
+    
     chooseCell(c) {
         this.getNewCoordinates();
         var found = [];
